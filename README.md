@@ -4,7 +4,7 @@
 
 Use yarn to install all the package.json dependencies.
 
-```
+```sh
 yarn install
 ```
 
@@ -25,7 +25,7 @@ ENV can be set with `.env` file for running locally.
 
 Tests can be run as follows:
 
-```
+```sh
 # run test locally
 yarn test:local
 
