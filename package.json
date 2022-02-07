@@ -11,11 +11,18 @@
     "@wdio/mocha-framework": "^7.16.14",
     "@wdio/selenium-standalone-service": "^7.16.14",
     "@wdio/spec-reporter": "^7.16.14",
-    "chromedriver": "^97.0.4",
+    "dotenv": "^16.0.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.5"
   },
   "scripts": {
-    "wdio": "wdio run test/conf/wdio.conf.ts"
+    "test:local": "wdio run conf/local.conf.ts",
+    "test:browserstack": "wdio run conf/browserstack.conf.ts",
+    "test": "test:local && test:browserstack"
+  },
+  "dependencies": {
+    "browserstack-local": "^1.4.8",
+    "chai": "^4.3.6",
+    "webdriverio": "^7.16.14"
   }
 }

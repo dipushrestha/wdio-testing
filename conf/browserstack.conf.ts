@@ -1,9 +1,10 @@
-import { config as sharedConfig } from './wdio.conf';
+import { config as sharedConfig } from "./base.conf";
 
 export const config: WebdriverIO.Config = {
   ...sharedConfig,
-  baseUrl: 'http://localhost',
+  baseUrl: process.env.BASE_URL,
   user: process.env.BROWSERSTACK_USERNAME,
   key: process.env.BROWSERSTACK_ACCESS_KEY,
-  services: ['browserstack']
+  logLevel: "info",
+  services: ["browserstack"],
 };
