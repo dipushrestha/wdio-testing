@@ -1,0 +1,6 @@
+# npm packages
+node_modules
+# yarn packages
+.yarn/
+# allure reports
+allure-results
