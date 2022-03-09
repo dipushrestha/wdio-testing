@@ -4,6 +4,7 @@ errorShots
 .DS_Store
 test/reports/*
 allure-reports/*
+allure-report/*
 allure-results/*
 
 # Logs
