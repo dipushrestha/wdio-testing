@@ -4,6 +4,9 @@
   "description": "Testing automation scripts with WebdriverIO and BrowserStack",
   "main": "./node_modules/.bin/wdio",
   "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/mocha": "^9.1.0",
+    "@types/upng-js": "^2.1.2",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
     "@wdio/allure-reporter": "^7.16.14",
@@ -24,11 +27,14 @@
   "scripts": {
     "test:local": "wdio run conf/local.conf.ts",
     "test:browserstack": "wdio run conf/browserstack.conf.ts",
+    "test:bs-local": "wdio run conf/browserstack.local.conf.ts",
     "test": "test:local && test:browserstack"
   },
   "dependencies": {
-    "browserstack-local": "^1.4.8",
+    "browserstack-local": "^1.4.9",
     "chai": "^4.3.6",
+    "jimp": "^0.16.1",
+    "jsqr": "^1.4.0",
     "webdriverio": "^7.16.14"
   }
 }

@@ -1,10 +1,23 @@
+import Jimp from 'jimp';
+import jsQR from 'jsqr';
 import LandingPage from '../pages/landing.page';
 import FlowPage from '../pages/flow.page';
 
 describe('OTG Flo landing page', () => {
-  before(async () => await LandingPage.open());
+  it('should redirect to Landing Page from QR code', async () => {
+    const image = await Jimp.read('assets/otg_qr.png');
+    const code = jsQR(
+      new Uint8ClampedArray(image.bitmap.data.buffer),
+      image.bitmap.width,
+      image.bitmap.height
+    );
+
+    await browser.url(code?.data || '');
+    await expect(browser).toHaveUrlContaining('flo.io');
+  });
 
   it('should see Pickup, Delivery, Dine-in', async () => {
+    await LandingPage.open();
     await expect(LandingPage.pickupBtn).toBeExisting();
     await expect(LandingPage.deliveryBtn).toBeExisting();
     await expect(LandingPage.dineInBtn).toBeExisting();

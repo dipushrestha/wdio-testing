@@ -4,7 +4,7 @@ export const config: WebdriverIO.Config = {
   ...sharedConfig,
   runner: 'local',
   headless: false,
-  baseUrl: 'http://localhost',
+  baseUrl: process.env.BASE_URL,
   specs: ['./tests/specs/**/*.ts'],
   services: ['selenium-standalone'],
 };
